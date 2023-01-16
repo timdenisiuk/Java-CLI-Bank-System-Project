@@ -7,22 +7,16 @@ public class Account {
     //account id number
     private String uuid;
 
-    //account user holder
-    private User holder;
-
     //account transactions
     private ArrayList<Transaction> transactions;
 
     /**
      * Constructor for account class
      * @param name      name of the account holder
-     * @param holder    User object for the account holder
      * @param theBank   Bank object for the account holder's bank
      */
-    public Account(String name, User holder, Bank theBank){
+    public Account(String name, Bank theBank){
         this.name = name;
-        this.holder = holder;
-
         this.uuid = theBank.getNewAccountUUID();
         this.transactions = new ArrayList<Transaction>();
 
@@ -77,9 +71,7 @@ public class Account {
      * @param memo     memo for the transaction
      */
     public void addTransaction(double amount, String memo){
-        Transaction newTrans = new Transaction(amount, memo, this);
+        Transaction newTrans = new Transaction(amount, memo);
         this.transactions.add(newTrans);
     }
-
-
 }
