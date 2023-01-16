@@ -11,7 +11,7 @@ public class ATM {
         User user1 = bank.addUser("John", "Doe", "1234");
 
         //add checking account
-        Account newAccount = new Account("Checking", user1, bank);
+        Account newAccount = new Account("Checking", bank);
         user1.addAccount(newAccount);
         bank.addAccount(newAccount);
 
@@ -260,8 +260,4 @@ public class ATM {
         //perform the withdrawal
         user.addAccountTrans(account, amount, memo);
     }
-
-
-
 }
-
