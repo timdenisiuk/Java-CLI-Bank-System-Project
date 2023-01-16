@@ -107,7 +107,7 @@ public class Bank {
         this.users.add(newUser);
 
         //Create savings account for the user
-        Account newAccount = new Account("Savings", newUser, this);
+        Account newAccount = new Account("Savings",  this);
 
         //Adds account for the user
         newUser.addAccount(newAccount);
